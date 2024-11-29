@@ -1,0 +1,87 @@
+{% extends 'skel_with_2navs.html' %}
+
+
+<!-- <table id = "customers">
+   <tr>
+     <th>IP</th>     
+     <th>Hostname</th>
+     <th>Operation </th>
+     <th>Output</th>
+   </tr>
+
+   {% for i in range(ips|length) %} 
+    
+   <tr>
+   
+
+     <td rowspan="{{snmp_op[i]|length}}"> {{ips[i]}}</td>
+     <td rowspan="{{snmp_op[i]|length}}"> {{hos[i]}}</td>
+     <td rowspan="{{snmp_op[i]|length}}">{{operation}}</td>
+     <td>{{snmp_op[i][0]}}</td>
+       
+   </tr>
+     {% for j in range(1,snmp_op[i]|length) %}
+     <tr>  
+        <td>{{snmp_op[i][j]}}</td>
+     </tr>
+     
+     {%endfor%}
+          
+    
+   
+   {%endfor%}
+
+   position: sticky; top: 55;
+ </table> -->
+ 
+
+
+
+
+{% block content %}
+
+ 
+
+
+<div style="margin-top: 0.5%; ">
+
+<table id="customers">
+  <tr>
+    <th style=" border-top-color: white; position: sticky; top: 55;">IP</th>
+    <th style=" border-top-color: white; position: sticky; top: 55;">Hostname</th>
+    <th style=" border-top-color: white; position: sticky; top: 55;">Operation </th>
+    <th style=" border-top-color: white; position: sticky; top: 55;">Output  </th>
+
+
+  </tr>
+
+  {% for i in range(ips|length) %}
+
+  <tr>
+
+
+    <td> {{ips[i]}}</td>
+    <td> {{hos[i]}}</td>
+    <td>{{operation}}</td>
+    <td>
+      {% for j in range(0,snmp_op[i]|length) %}
+
+      {{snmp_op[i][j]}} <br>
+
+      {%endfor%}
+
+    </td>
+    
+
+
+    {%endfor%}
+
+
+</table>
+
+</div>
+ 
+
+  <button id="download_csv1" class="btn btn-outline-dark">Download CSV</button>
+ 
+{% endblock %}

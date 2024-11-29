@@ -1,0 +1,56 @@
+ {% extends 'skeleton.html' %}
+   
+   
+   {% block content %}
+
+
+   <div class="form">
+      <form action="http://localhost:5001/netcon" method="post">
+         <div class="row justify-content-between">
+
+            <div class="col-4  ">
+               <p>Enter IPs:</p>
+               <p><textarea name="router"  class="form-control" placeholder="Router" rows="10" style="width: 100%;"></textarea></p>
+            </div>
+
+            <div class="col-4" id="snmp-check">
+               <p>Enter Required Configs:</p>
+               <p><textarea name="config"  class="form-control" placeholder="Configs" rows="10" style="width: 80%;"></textarea></p>
+            </div>
+
+         
+
+            <div class="col-4">
+               <p> Enter User: </p>
+               <p> <input type="text" class="form-control" style="width: 50%;" name="user" /></p>
+
+
+               <p> Enter Password: </p>
+               <p><input  type="password" class="form-control" style="width: 50%;" name="password" /> </p>
+
+                
+
+
+               <p>Choose Operation:</p>
+
+                  <select id = "trig" class="form-select" style="width: 90%;" name="operation" id="exampleDataList"  >
+                      
+                     <option value="none" selected>Select your option</option>                       
+                      <option value="sh run | in hostname">sh run | in hostname</option>
+                      <option value="sh run | in snmp-server host">sh run | in snmp-server host</option>
+                      <option value="sh run | in snmp-server host (check)">snmp-server host (check missing and extra)</option>
+
+                     </select>
+            </div>
+   
+         </div>
+
+         <div class="formbutton">
+            <p><input type="submit" class="btn btn-outline-dark" value="submit" /></p>
+         </div>
+
+      </form>
+   </div>
+   {% endblock %}
+
+  

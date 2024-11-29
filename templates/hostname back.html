@@ -1,0 +1,29 @@
+{% extends 'skel_with_2navs.html' %}
+{% block content %}
+
+<div style="margin-top: 0.5%; ">
+
+  <table id="customers">
+    <tr>
+      <th style=" border-top-color: white; position: sticky; top: 55;">IP</th>
+      <th style=" border-top-color: white; position: sticky; top: 55;">Operation </th>
+      <th style=" border-top-color: white; position: sticky; top: 55;">Output</th>
+    </tr>
+
+    {% for i in range(0, ips|length) %}
+    <tr>
+      <td> {{ips[i]}}</td>
+      <td>{{operation}}</td>
+      <td> {{hostoutput[i]}}</td>
+    </tr>
+
+    {%endfor%}
+
+  </table>
+</div>
+
+
+<button id="download_csv1" class="btn btn-outline-dark">Download CSV</button>
+
+
+{% endblock %}

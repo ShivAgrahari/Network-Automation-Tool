@@ -1,0 +1,9 @@
+7.160.127.55
+
+
+required config 1
+snmp-server host 7.10.192.24 version 2c nAc5snmp
+snmp-server host 7.188.117.38 version 2c nAc5snmp
+snmp-server host 7.188.117.6 version 2c nAc5snmp
+snmp-server host 7.6.192.24 version 2c nAc5snmp
+required config 2

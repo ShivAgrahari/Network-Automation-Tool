@@ -1,0 +1,64 @@
+{% extends 'skel_with_2navs.html' %}
+{% block content %}
+ 
+
+<div style="margin-top: 0.5%;">
+
+<table id="customers">
+  <tr>
+    <th style=" border-top-color: white; position: sticky; top: 55;">IP</th>
+    <th style="border-top-color: white; position: sticky; top: 55;">Hostname</th>
+    <th style="border-top-color: white; position: sticky; top: 55;">Operation </th>    
+    <th style="border-top-color: white; position: sticky; top: 55;">Matching  </th>
+    <th style="border-top-color: white; position: sticky; top: 55;">Missing  </th>
+    <th style="border-top-color: white; position: sticky; top: 55;">Extra  </th>
+    
+  </tr>
+
+  {% for i in range(ips|length) %}
+
+  <tr>
+
+
+    <td> {{ips[i]}}</td>
+    <td> {{hos[i]}}</td>
+    <td>{{operation}}</td>
+    <td>
+      {% for j in range(0,match[i]|length) %}
+
+      {{match[i][j]}} <br>
+
+      {%endfor%}
+
+    </td>
+
+    <td>
+        {% for j in range(0,absent[i]|length) %}
+  
+        {{absent[i][j]}} <br>
+  
+        {%endfor%}
+  
+      </td>
+      <td>
+        {% for j in range(0,extra[i]|length) %}
+  
+        {{extra[i][j]}} <br>
+  
+        {%endfor%}
+  
+      </td>
+
+    {%endfor%}
+
+
+</table>
+
+</div>
+ 
+ 
+  <button id="download_csv1" class="btn btn-outline-dark">Download CSV</button>
+ 
+
+
+{% endblock %}
