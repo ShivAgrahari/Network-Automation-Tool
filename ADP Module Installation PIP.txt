@@ -1,0 +1,39 @@
+[Replace the <modulename> with the required pakage ]
+
+pip --proxy=http://hydproxy.es.oneadp.com:8080 install <modulename>
+
+-> create virtual environment:
+
+python3 -m venv <environment name>
+
+-> activate virtual environment:
+
+source <environment name>/bin/activate
+
+-> deactivate virtual environment:
+
+deactivate
+
+-> change directory:
+cd "<directory name>"
+
+-> go to home directory:
+cd ~
+
+-> check the processes running in Linux:
+ps
+
+-> search background process by name:
+
+ps aux | grep <process name>
+
+-> kill a running process:
+
+kill -9 <PID>
+
+-> run a process in background: 
+nohup python <application name>.py > log.txt 2>&1 &
+
+
+
+
